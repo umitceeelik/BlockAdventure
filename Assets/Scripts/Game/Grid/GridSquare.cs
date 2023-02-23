@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Bson;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,13 @@ public class GridSquare : MonoBehaviour
     public Image hoverImage;
     public Image activeImage;
     public List<Sprite> normalImages;
+
+    private Config.SquareColor currentSquareColor = Config.SquareColor.NotSet;
+
+    public Config.SquareColor GetCurrentColor()
+    {
+        return currentSquareColor;
+    }
 
     public bool Selected { get; set; }
     public int SquareIndex { get; set; }
@@ -26,8 +34,9 @@ public class GridSquare : MonoBehaviour
         return hoverImage.gameObject.activeSelf;
     }
 
-    public void PlaceShapeOnBoard()
+    public void PlaceShapeOnBoard(Config.SquareColor color)
     {
+        currentSquareColor = color;
         ActivateSquare();
     }
 
@@ -37,6 +46,18 @@ public class GridSquare : MonoBehaviour
         activeImage.gameObject.SetActive(true);
         Selected = true;
         SquareOccupied = true;
+    }
+
+    public void Deactivate()
+    {
+        currentSquareColor = Config.SquareColor.NotSet;
+        activeImage.gameObject.SetActive(false);
+    }
+    public void ClearOccupied()
+    {
+        currentSquareColor = Config.SquareColor.NotSet;
+        Selected = false;
+        SquareOccupied = false;
     }
 
     public void SetImage(bool setFirstImage)

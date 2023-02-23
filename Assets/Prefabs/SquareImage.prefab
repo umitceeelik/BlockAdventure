@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 7746300464809849033}
   - component: {fileID: 6524984867520028186}
   - component: {fileID: 7000192168058761253}
+  - component: {fileID: 84102959468277914}
   - component: {fileID: 79012190514929500}
   - component: {fileID: 2911814662597744297}
   - component: {fileID: 3763297452653350673}
@@ -139,6 +140,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupiedImage: {fileID: 8938082321232475338}
+--- !u!114 &84102959468277914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9187803027402010777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 917567ecfaf74394393161fd27f192f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  squareTextureData: {fileID: 11400000, guid: 1a3ae0df9873f2f43a7d02583fe47440, type: 2}
+  updateImageOnReachedTreashold: 1
 --- !u!114 &79012190514929500
 MonoBehaviour:
   m_ObjectHideFlags: 0
